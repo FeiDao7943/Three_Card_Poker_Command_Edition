@@ -1,0 +1,15 @@
+['Diamond_A', 'Diamond_7', 'Diamond_Q'],['Heart_Q', 'Club_Q', 'Diamond_4'],P
+['Diamond_4', 'Diamond_K', 'Club_5'],['Spade_4', 'Club_K', 'Spade_9'],D
+['Heart_J', 'Heart_9', 'Heart_A'],['Diamond_2', 'Heart_6', 'Club_10'],P
+['Club_4', 'Diamond_2', 'Heart_A'],['Heart_10', 'Diamond_Q', 'Spade_6'],P
+['Spade_5', 'Spade_6', 'Club_5'],['Diamond_3', 'Heart_5', 'Club_A'],P
+['Heart_Q', 'Club_9', 'Club_5'],['Heart_4', 'Diamond_4', 'Spade_4'],D
+['Spade_3', 'Club_5', 'Club_K'],['Heart_7', 'Heart_6', 'Diamond_3'],P
+['Club_7', 'Club_2', 'Club_9'],['Club_K', 'Club_8', 'Diamond_3'],P
+['Club_8', 'Heart_K', 'Spade_5'],['Diamond_8', 'Spade_J', 'Diamond_K'],D
+['Spade_2', 'Heart_Q', 'Spade_Q'],['Spade_5', 'Heart_10', 'Heart_J'],P
+['Heart_J', 'Club_9', 'Club_K'],['Heart_6', 'Diamond_K', 'Club_A'],D
+['Diamond_4', 'Diamond_10', 'Heart_6'],['Spade_7', 'Diamond_9', 'Club_5'],P
+['Heart_Q', 'Spade_8', 'Diamond_Q'],['Diamond_K', 'Club_5', 'Club_9'],P
+['Club_8', 'Diamond_Q', 'Diamond_J'],['Club_K', 'Heart_7', 'Heart_A'],D
+['Spade_K', 'Spade_9', 'Diamond_7'],['Diamond_K', 'Heart_9', 'Heart_5'],P
