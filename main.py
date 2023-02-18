@@ -29,5 +29,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-    # print('\033[1;31m欢迎使用学生选课系统\033[0m')
