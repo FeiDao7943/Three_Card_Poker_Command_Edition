@@ -466,8 +466,6 @@ class Referee_method:
 
         return currency
 
-
-
         # if result != label:
         #     print("------------------------")
         #     correct += 1
@@ -475,7 +473,7 @@ class Referee_method:
 
 
 if __name__ == '__main__':
-    file = open("referee_test.txt", "r")
+    file = open("../test_file/referee_test.txt", "r")
     all_text = file.readlines()
     correct = 0
     # for text in all_text:
