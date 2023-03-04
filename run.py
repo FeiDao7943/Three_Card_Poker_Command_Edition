@@ -38,8 +38,8 @@ def main():
         step_3 = Get_Compare(game_dic)
         game_dic = step_3.solve_compare()
 
-        for counter in game_dic:
-            print(counter, ":", game_dic[counter], end='\n')
+        for counter_test in game_dic:
+            print(counter_test, ":", game_dic[counter_test], end='\n')
 
         # ante = limit_input(game_dic["currency"] / 2, "ante")
         # pair_plus = limit_input(game_dic["currency"] - 2 * ante, "pair_plus")

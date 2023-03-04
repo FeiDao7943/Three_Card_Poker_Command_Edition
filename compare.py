@@ -17,34 +17,34 @@ class Get_Compare:
         flag_sum_player = 0
         flag_sum_dealer = 0
 
-        for counter in range(len(self.compare_dic["play_combination_list"])):
-            flag_sum_player += self.compare_dic["play_combination_list"][counter]
-            flag_sum_dealer += self.compare_dic["deal_combination_list"][counter]
+        for counter_sum in range(len(self.compare_dic["play_combination_list"])):
+            flag_sum_player += self.compare_dic["play_combination_list"][counter_sum]
+            flag_sum_dealer += self.compare_dic["deal_combination_list"][counter_sum]
         # print(flag_sum_player)
         # print(flag_sum_player)
 
         # No Double Combinations
         if (flag_sum_player + flag_sum_player) == 2:
-            for counter in range(len(self.compare_dic["play_combination_list"])):
-                counter = 6 - 1 - counter
-                flag_gap = self.compare_dic["play_combination_list"][counter] - \
-                           self.compare_dic["deal_combination_list"][counter]
-                flag_sum = self.compare_dic["play_combination_list"][counter] + \
-                           self.compare_dic["deal_combination_list"][counter]
+            for counter_list in range(len(self.compare_dic["play_combination_list"])):
+                counter_list = 6 - 1 - counter_list
+                flag_gap = self.compare_dic["play_combination_list"][counter_list] - \
+                           self.compare_dic["deal_combination_list"][counter_list]
+                flag_sum = self.compare_dic["play_combination_list"][counter_list] + \
+                           self.compare_dic["deal_combination_list"][counter_list]
 
                 if flag_sum == 1:
-                    if self.compare_dic["play_combination_list"][counter]:
+                    if self.compare_dic["play_combination_list"][counter_list]:
                         self.player_win_flag = 1
                         # print("Player's Cards Are '%s', Win!" % (self.compare_dic["combination_list"][counter]))
                         self.compare_result_text = ("Player's Cards Are '%s', Win!" %
-                                                    (self.compare_dic["combination_list"][counter]))
+                                                    (self.compare_dic["combination_list"][counter_list]))
                         break
 
-                    if self.compare_dic["deal_combination_list"][counter]:
+                    if self.compare_dic["deal_combination_list"][counter_list]:
                         self.dealer_win_flag = 1
                         # print("Dealer's Cards Are '%s', Win!" % (self.compare_dic["combination_list"][counter]))
                         self.compare_result_text = ("Dealer's Cards Are '%s', Win!" %
-                                                    (self.compare_dic["combination_list"][counter]))
+                                                    (self.compare_dic["combination_list"][counter_list]))
                         break
 
                 if flag_sum == 2:
@@ -60,14 +60,14 @@ class Get_Compare:
                             # print("Player's Cards Are '%s' And Larger, Win!" % (
                             #     self.compare_dic["combination_list"][counter]))
                             self.compare_result_text = ("Player's Cards Are '%s' And Larger in First, Win!" %
-                                                        (self.compare_dic["combination_list"][counter]))
+                                                        (self.compare_dic["combination_list"][counter_list]))
                             break
                         if player_score_1st < dealer_score_1st:
                             self.dealer_win_flag = 1
                             # print("Dealer's Cards Are '%s' And Larger, Win!" %
                             #       (self.compare_dic["combination_list"][counter]))
                             self.compare_result_text = ("Dealer's Cards Are '%s' And Larger in First, Win!" %
-                                                        (self.compare_dic["combination_list"][counter]))
+                                                        (self.compare_dic["combination_list"][counter_list]))
                             break
 
                         # The Largest is Same, Compare Second Larger Card
@@ -81,14 +81,14 @@ class Get_Compare:
                                 # print("Player's Cards Are '%s' And Larger, Win!" % (
                                 #     self.compare_dic["combination_list"][counter]))
                                 self.compare_result_text = ("Player's Cards Are '%s' And Larger in Second, Win!" %
-                                                            (self.compare_dic["combination_list"][counter]))
+                                                            (self.compare_dic["combination_list"][counter_list]))
                                 break
                             if player_score_2nd < dealer_score_2nd:
                                 self.dealer_win_flag = 1
                                 # print("Dealer's Cards Are '%s' And Larger, Win!" % (
                                 #     self.compare_dic["combination_list"][counter]))
                                 self.compare_result_text = ("Dealer's Cards Are '%s' And Larger in Second, Win!" %
-                                                            (self.compare_dic["combination_list"][counter]))
+                                                            (self.compare_dic["combination_list"][counter_list]))
                                 break
 
                             # The Second Largest is Same, Compare Third Larger Card
@@ -102,14 +102,14 @@ class Get_Compare:
                                     # print("Player's Cards Are '%s' And Larger, Win!" % (
                                     #     self.compare_dic["combination_list"][counter]))
                                     self.compare_result_text = ("Player's Cards Are '%s' And Larger in Third, Win!" %
-                                                                (self.compare_dic["combination_list"][counter]))
+                                                                (self.compare_dic["combination_list"][counter_list]))
                                     break
                                 if player_score_3rd < dealer_score_3rd:
                                     self.dealer_win_flag = 1
                                     # print("Dealer's Cards Are '%s' And Larger, Win!" % (
                                     #     self.compare_dic["combination_list"][counter]))
                                     self.compare_result_text = ("Dealer's Cards Are '%s' And Larger in Third, Win!" %
-                                                                (self.compare_dic["combination_list"][counter]))
+                                                                (self.compare_dic["combination_list"][counter_list]))
                                     break
                                 if player_score_3rd == dealer_score_3rd:
                                     self.equal_flag = 1
@@ -125,7 +125,6 @@ class Get_Compare:
         return self.compare_dic
 
 
-
 if __name__ == '__main__':
     game_dic = {"currency": 1000}
     game_dic["player_read_value"] = [['Heart', '3'], ['Club', '4'], ['Heart', '5']]
@@ -135,5 +134,5 @@ if __name__ == '__main__':
     game_dic["combination_list"] = ['Normal', 'Pair', 'Flush', 'Straight', 'Three of a Kind', 'Straight Flush']
     test = Get_Compare(game_dic)
     game_dic = test.solve_compare()
-    for counter in game_dic:
-        print(counter, ":", game_dic[counter], end='\n')
+    for counter_test in game_dic:
+        print(counter_test, ":", game_dic[counter_test], end='\n')

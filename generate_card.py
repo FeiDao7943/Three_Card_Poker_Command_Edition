@@ -62,7 +62,7 @@ if __name__ == '__main__':
     game_dic = {"currency": 1000}
     test = Generator(game_dic)
     game_dic = test.deal_card(txt=False)
-    for counter in game_dic:
-        print(counter, ":", game_dic[counter], end='\n')
+    for counter_test in game_dic:
+        print(counter_test, ":", game_dic[counter_test], end='\n')
 
 

@@ -23,9 +23,9 @@ class Get_Combinations:
         self.dealer_read_value = None
 
     def read_card(self):
-        for counter in range(len(self.player_card)):
-            self.player_read.append(self.player_card[counter].split("_", 2))
-            self.dealer_read.append(self.dealer_card[counter].split("_", 2))
+        for counter_read in range(len(self.player_card)):
+            self.player_read.append(self.player_card[counter_read].split("_", 2))
+            self.dealer_read.append(self.dealer_card[counter_read].split("_", 2))
 
         self.player_read = self.ordering(self.player_read)
         self.dealer_read = self.ordering(self.dealer_read)
@@ -38,15 +38,15 @@ class Get_Combinations:
         min_3rd = 0
         read_cards_copy = copy.deepcopy(read_cards)
 
-        for counter in range(3):
-            if read_cards_copy[counter][1] == "J":
-                read_cards_copy[counter][1] = "11"
-            if read_cards_copy[counter][1] == "Q":
-                read_cards_copy[counter][1] = "12"
-            if read_cards_copy[counter][1] == "K":
-                read_cards_copy[counter][1] = "13"
-            if read_cards_copy[counter][1] == "A":
-                read_cards_copy[counter][1] = "14"
+        for counter_ordering in range(3):
+            if read_cards_copy[counter_ordering][1] == "J":
+                read_cards_copy[counter_ordering][1] = "11"
+            if read_cards_copy[counter_ordering][1] == "Q":
+                read_cards_copy[counter_ordering][1] = "12"
+            if read_cards_copy[counter_ordering][1] == "K":
+                read_cards_copy[counter_ordering][1] = "13"
+            if read_cards_copy[counter_ordering][1] == "A":
+                read_cards_copy[counter_ordering][1] = "14"
 
         if int(read_cards_copy[0][1]) <= int(read_cards_copy[1][1]):
             min_1st = 0
@@ -94,15 +94,15 @@ class Get_Combinations:
 
         read_cards_copy = copy.deepcopy(read_cards)
 
-        for counter in range(3):
-            if read_cards_copy[counter][1] == "J":
-                read_cards_copy[counter][1] = "11"
-            if read_cards_copy[counter][1] == "Q":
-                read_cards_copy[counter][1] = "12"
-            if read_cards_copy[counter][1] == "K":
-                read_cards_copy[counter][1] = "13"
-            if read_cards_copy[counter][1] == "A":
-                read_cards_copy[counter][1] = "14"
+        for counter_copy in range(3):
+            if read_cards_copy[counter_copy][1] == "J":
+                read_cards_copy[counter_copy][1] = "11"
+            if read_cards_copy[counter_copy][1] == "Q":
+                read_cards_copy[counter_copy][1] = "12"
+            if read_cards_copy[counter_copy][1] == "K":
+                read_cards_copy[counter_copy][1] = "13"
+            if read_cards_copy[counter_copy][1] == "A":
+                read_cards_copy[counter_copy][1] = "14"
 
         if read_cards_copy[0][0] == read_cards_copy[1][0]:
             if read_cards_copy[1][0] == read_cards_copy[2][0]:
@@ -127,15 +127,15 @@ class Get_Combinations:
     def Straight_judgement(self, read_cards):
         read_cards_copy = copy.deepcopy(read_cards)
 
-        for counter in range(3):
-            if read_cards_copy[counter][1] == "J":
-                read_cards_copy[counter][1] = "11"
-            if read_cards_copy[counter][1] == "Q":
-                read_cards_copy[counter][1] = "12"
-            if read_cards_copy[counter][1] == "K":
-                read_cards_copy[counter][1] = "13"
-            if read_cards_copy[counter][1] == "A":
-                read_cards_copy[counter][1] = "14"
+        for counter_copy in range(3):
+            if read_cards_copy[counter_copy][1] == "J":
+                read_cards_copy[counter_copy][1] = "11"
+            if read_cards_copy[counter_copy][1] == "Q":
+                read_cards_copy[counter_copy][1] = "12"
+            if read_cards_copy[counter_copy][1] == "K":
+                read_cards_copy[counter_copy][1] = "13"
+            if read_cards_copy[counter_copy][1] == "A":
+                read_cards_copy[counter_copy][1] = "14"
 
         if int(read_cards_copy[0][1]) == int(read_cards_copy[1][1]) - 1:
             if int(read_cards_copy[1][1]) == int(read_cards_copy[2][1]) - 1:
@@ -175,15 +175,15 @@ class Get_Combinations:
 
     def read_value(self, read_cards):
         read_cards_copy = copy.deepcopy(read_cards)
-        for counter in range(3):
-            if read_cards_copy[counter][1] == "J":
-                read_cards_copy[counter][1] = "11"
-            if read_cards_copy[counter][1] == "Q":
-                read_cards_copy[counter][1] = "12"
-            if read_cards_copy[counter][1] == "K":
-                read_cards_copy[counter][1] = "13"
-            if read_cards_copy[counter][1] == "A":
-                read_cards_copy[counter][1] = "14"
+        for counter_copy in range(3):
+            if read_cards_copy[counter_copy][1] == "J":
+                read_cards_copy[counter_copy][1] = "11"
+            if read_cards_copy[counter_copy][1] == "Q":
+                read_cards_copy[counter_copy][1] = "12"
+            if read_cards_copy[counter_copy][1] == "K":
+                read_cards_copy[counter_copy][1] = "13"
+            if read_cards_copy[counter_copy][1] == "A":
+                read_cards_copy[counter_copy][1] = "14"
         return read_cards_copy
 
     def solve_combination(self):
@@ -199,13 +199,12 @@ class Get_Combinations:
         self.dealer_combinations_dic = copy.deepcopy(tem_combinations_dic)
         self.dealer_read_value = copy.deepcopy(tem_read_value)
 
-
         play_combination_list = []
         deal_combination_list = []
-        for counter in self.player_combinations_dic:
-            play_combination_list.append(self.player_combinations_dic[counter])
-        for counter in self.dealer_combinations_dic:
-            deal_combination_list.append(self.dealer_combinations_dic[counter])
+        for counter_player in self.player_combinations_dic:
+            play_combination_list.append(self.player_combinations_dic[counter_player])
+        for counter_dealer in self.dealer_combinations_dic:
+            deal_combination_list.append(self.dealer_combinations_dic[counter_dealer])
 
         self.combination_dic["player_read"] = self.player_read
         self.combination_dic["dealer_read"] = self.dealer_read
@@ -223,5 +222,5 @@ if __name__ == '__main__':
     game_dic["dealer_card"] = ['Heart_K', 'Heart_Q', 'Heart_Q']
     test = Get_Combinations(game_dic)
     game_dic = test.solve_combination()
-    for counter in game_dic:
-        print(counter, ":", game_dic[counter], end='\n')
+    for counter_test in game_dic:
+        print(counter_test, ":", game_dic[counter_test], end='\n')
