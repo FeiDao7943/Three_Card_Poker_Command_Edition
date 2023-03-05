@@ -19,7 +19,7 @@ This is an esaying game script follow the Casino game in GTA OL.
 
 ### Magnitude: 
 
-​		A, K, Q, J, 10, 9, 8, 7, 6, 5, 4, 3
+​		A, K, Q, J, 10, 9, 8, 7, 6, 5, 4, 3, 2
 
 ### Suit:
 
