@@ -7,7 +7,7 @@ This is an esaying game script follow the Casino game in GTA OL.
 ## Screen Capture
 
 ![screen capture](./figure/screen capture.png)
-
+![screen capture](https://github.com/FeiDao7943/Three_Card_Poker_Command_Edition/blob/main/figure/screen%20capture.png)
 ## Rule
 
 ### Magnitude: 
