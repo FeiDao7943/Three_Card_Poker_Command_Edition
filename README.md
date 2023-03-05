@@ -75,3 +75,6 @@ This is an esaying game script follow the Casino game in GTA OL.
 
 ​		**Stragiht Flush:** 5 to 1
 
+## Update Log
+
+**[2023.3.5]** Update the Beta Edition, all functions are completed.
