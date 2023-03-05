@@ -8,6 +8,13 @@ This is an esaying game script follow the Casino game in GTA OL.
 
 ![screen capture](./figure/screen capture.png)
 ![screen capture](https://github.com/FeiDao7943/Three_Card_Poker_Command_Edition/blob/main/figure/screen%20capture.png)
+
+## To Play
+
+​       Need pre-install package `numpy`, just type`pip install numpy==1.21.5`. Other edition might also work.
+
+​       Based on Python3.8 or other edition in Python3 type `python run.py`.
+
 ## Rule
 
 ### Magnitude: 
