@@ -11,7 +11,7 @@ This is an esaying game script follow the Casino game in GTA OL.
 
 ## To Play
 
-​       Need pre-install package `numpy`, just type`pip install numpy==1.21.5`. Other edition might also work.
+​       Need pre-install package `numpy` and `color ama`, just type`pip install numpy==1.21.5` and `pip install color ama`. Other edition might also work.
 
 ​       Based on Python3.8 or other edition in Python3 type `python run.py`.
 

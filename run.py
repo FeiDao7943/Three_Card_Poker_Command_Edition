@@ -2,10 +2,13 @@
 # @time :
 # @author : unusualroutetaker
 # @email : feidaofeidao@outlook.com
+import os
 from generate_card import Generator
 from combinations import Get_Combinations
 from compare import Get_Compare
 from score import Get_Score
+
+os.system('')
 
 
 def main():
