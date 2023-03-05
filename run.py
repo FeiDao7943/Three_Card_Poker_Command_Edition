@@ -34,6 +34,5 @@ def main():
     print("\nGame Over!\n")
 
 
-
 if __name__ == '__main__':
     main()

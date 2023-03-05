@@ -3,6 +3,7 @@
 # @author : unusualroutetaker
 # @email : feidaofeidao@outlook.com
 import copy
+import time
 
 
 def limit_input(limit, value_name):
@@ -31,12 +32,12 @@ class Get_Score:
         ante = limit_input(self.score_dic["currency"] / 2, "ante")
         self.score_dic["currency"] -= ante
         to_print = ("[Currency - %d: %d]" % (ante, self.score_dic["currency"]))
-        print("\033[1;31m%s\033[0m" % to_print)
+        print("\033[1;33m%s\033[0m" % to_print)
 
         pair_plus = limit_input(self.score_dic["currency"] - ante, "pair_plus")
         self.score_dic["currency"] -= pair_plus
         to_print = ("[Currency - %d: %d]" % (pair_plus, self.score_dic["currency"]))
-        print("\033[1;31m%s\033[0m" % to_print)
+        print("\033[1;33m%s\033[0m" % to_print)
 
         # print(ante)
         # print(pair_plus)
@@ -52,12 +53,12 @@ class Get_Score:
                     self.play = self.ante
                     self.score_dic["currency"] -= self.play
                     to_print = ("[Currency - %d: %d]" % (self.play, self.score_dic["currency"]))
-                    print("\033[1;31m%s\033[0m" % to_print)
+                    print("\033[1;33m%s\033[0m" % to_print)
                     pass_flag_2 = 1
                 if self.pay_play_flag == "n":
                     self.play = 0
                     to_print = ("[Currency - %d: %d]" % (self.play, self.score_dic["currency"]))
-                    print("\033[1;31m%s\033[0m" % to_print)
+                    print("\033[1;33m%s\033[0m" % to_print)
                     pass_flag_2 = 1
                 if (self.pay_play_flag != "y") and (self.pay_play_flag != "n"):
                     print("Error input.")
@@ -67,13 +68,18 @@ class Get_Score:
     def solve_score(self):
         print("----------------------------%s----------------------------" % \
               ("ROUND" + str(self.score_dic["round_num"])))
-
+        time.sleep(1)
         earn = 0
-        print("[Currency: %d]" % self.score_dic["currency"])
+        to_print = ("[Currency: %d]" % self.score_dic["currency"])
+        print("\033[1;33m%s\033[0m" % to_print)
         self.get_input_1()
+        time.sleep(1)
         print("\nPlayer: ", self.score_dic["player_card"])
+        time.sleep(1)
         self.get_input_2()
+        time.sleep(1)
         print("Dealer: ", self.score_dic["dealer_card"])
+        time.sleep(1)
 
         # Dealer Win or Equal
         if self.score_dic["dealer_win_flag"] or self.score_dic["equal_flag"]:
@@ -100,7 +106,7 @@ class Get_Score:
         # Player Win
         if self.score_dic["player_win_flag"]:
             to_print = (self.score_dic["compare_result_text"])
-            print("\033[1;31m%s\033[0m" % to_print)
+            print("\033[1;36m%s\033[0m" % to_print)
 
             # Player's card is Normal
             if self.score_dic["play_combination_list"][0]:
@@ -144,7 +150,7 @@ class Get_Score:
 
         self.score_dic["currency"] += earn
         to_print = ("[Currency + %d: %d]" % (earn, self.score_dic["currency"]))
-        print("\033[1;36m%s\033[0m" % to_print)
+        print("\033[1;33m%s\033[0m" % to_print)
         input("---------------------Press Enter to Next---------------------\n")
         return self.score_dic
 
