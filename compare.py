@@ -113,7 +113,7 @@ class Get_Compare:
                                     break
                                 if player_score_3rd == dealer_score_3rd:
                                     self.equal_flag = 1
-                                    self.compare_result_text = "Card's Are Equal!"
+                                    self.compare_result_text = "Card's Are Equal! Player Not Win!"
 
     def solve_compare(self):
         self.combinations_compare()
@@ -121,7 +121,7 @@ class Get_Compare:
         self.compare_dic["dealer_win_flag"] = self.dealer_win_flag
         self.compare_dic["equal_flag"] = self.equal_flag
         self.compare_dic["compare_result_text"] = self.compare_result_text
-        print(self.compare_result_text)
+        # print(self.compare_result_text)
         return self.compare_dic
 
 

@@ -5,26 +5,13 @@
 from generate_card import Generator
 from combinations import Get_Combinations
 from compare import Get_Compare
-
-
-def limit_input(limit, value_name):
-    pass_flag = 0
-    while not pass_flag:
-        try:
-            locals()[value_name] = int(input("Input the %s: " % value_name))
-            if locals()[value_name] <= limit:
-                pass_flag = 1
-            if locals()[value_name] > limit:
-                print("Value of %s is over the limit." % value_name)
-        except:
-            print("Enter integral number.")
-    return locals()[value_name]
+from score import Get_Score
 
 
 def main():
-    game_dic = {"currency": 1000}
-
-    if game_dic["currency"] > 0:
+    game_dic = {"currency": 1000, "round_num": 0}
+    while game_dic["currency"] > 0:
+        game_dic["round_num"] += 1
 
         # Step 1, Generate the Cards
         step_1 = Generator(game_dic)
@@ -38,11 +25,14 @@ def main():
         step_3 = Get_Compare(game_dic)
         game_dic = step_3.solve_compare()
 
-        for counter_test in game_dic:
-            print(counter_test, ":", game_dic[counter_test], end='\n')
+        # Step 4, Player Input
+        step_4 = Get_Score(game_dic)
+        game_dic = step_4.solve_score()
+        # for counter_test in game_dic:
+        #     print(counter_test, ":", game_dic[counter_test], end='\n')
 
-        # ante = limit_input(game_dic["currency"] / 2, "ante")
-        # pair_plus = limit_input(game_dic["currency"] - 2 * ante, "pair_plus")
+    print("\nGame Over!\n")
+
 
 
 if __name__ == '__main__':
